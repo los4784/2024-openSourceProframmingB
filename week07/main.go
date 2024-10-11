@@ -1,21 +1,13 @@
 package main
 
-import (
-	"bufio"
-	"fmt"
-	"log"
-	"os"
-)
+func main()
 
-func main() {
-	fmt.Print("이름 입력 : ")
-	r := bufio.NewReader(os.Stdin)
-	name, err := r.ReadString('\n')
+//  shadowinh problem
+//var float32 float32 = 9.1
+//fmt.Println(float32)
 
-	if err != nil {
-		log.Fatal(err)
-	} else {
-		fmt.Println(name)
-	}
+//var number float32
+//fmt.Print(nmber)
 
-}
+//ver fmt float32 = 9.1
+//fmt.Print(float2)
