@@ -11,19 +11,32 @@ import (
 	"time"
 )
 
+package main
+
+import (
+	"bufio"
+	"fmt"
+	"log"
+	"math/rand"
+	"os"
+	"strconv"
+	"strings"
+	"time"
+)
+
 func main() {
 	rand.Seed(time.Now().Unix())
 	answer := rand.Intn(6) + 1 // dice 1 ~ 6
 	fmt.Println(answer)
 
-	fmt.print("숫자 입력: ")
+	fmt.Print("숫자 입력: ")
 	in := bufio.NewReader(os.Stdin)
-	input, err := in.ReadString("/n")
+	input, err := in.ReadString('\n') // 수정된 부분
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	input = strings.TrimSpace(input) // 줄바꿈, 띄엇쓰기 탭 등 제거 python strip과 유사
+	input = strings.TrimSpace(input) // 줄바꿈, 띄어쓰기, 탭 등 제거
 	guess, err := strconv.Atoi(input)
 	if err != nil {
 		log.Fatal(err)
@@ -38,3 +51,4 @@ func main() {
 		fmt.Println("입력하신 값은 정답보다 큰 수 입니다.")
 	}
 }
+
