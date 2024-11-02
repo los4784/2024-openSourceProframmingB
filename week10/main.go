@@ -27,5 +27,4 @@ func main() {
 		log.Fatal(err)
 	}
 	fmt.Printf("%0.2f liters needed\n", amount)
-	fmt.Printf("qwer")
 }
