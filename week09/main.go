@@ -11,19 +11,6 @@ import (
 	"time"
 )
 
-package main
-
-import (
-	"bufio"
-	"fmt"
-	"log"
-	"math/rand"
-	"os"
-	"strconv"
-	"strings"
-	"time"
-)
-
 func main() {
 	rand.Seed(time.Now().Unix())
 	answer := rand.Intn(6) + 1 // dice 1 ~ 6
@@ -51,4 +38,3 @@ func main() {
 		fmt.Println("입력하신 값은 정답보다 큰 수 입니다.")
 	}
 }
-
