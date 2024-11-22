@@ -6,6 +6,10 @@ import (
 
 func main() {
 
+	var emptySlice []bool
+	// emptySlice = make([]bool, 5) slice zeor value (null)
+	fmt.Printf("%#v\n", emptySlice)
+
 	gpas := [5]float64{3.5, 4.1, 4.5, 3.9, 4.23} // 배열 초기화 시 중괄호 사용 atty := attay literal
 	gpa_slice := gpas[1:4]                       // [4.1, 4.5, 3.9]
 	// gpa_slice[1] = 2.71
