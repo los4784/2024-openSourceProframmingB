@@ -2,23 +2,22 @@ package main
 
 import (
 	"fmt"
+	"os"
+	"reflect"
 )
 
+// func test(strs string) {
+// func test(strs ...string, i int){ 는 에러가 난다
+func test(i int, strs ...string) {
+	fmt.Println(strs, reflect.TypeOf(strs))
+}
+
 func main() {
-
-	var emptySlice []bool
-	//emptySlice = make([]bool, 5)
-	fmt.Printf("%#v %d\n", emptySlice, len(emptySlice)) //slice zeor value (nil),0
-	if len(emptySlice) == 0 {
-		emptySlice = append(emptySlice, true)
-	}
-	fmt.Printf("%#v %d\n", emptySlice, len(emptySlice)) //[]boll{true}, 1
-
-	gpas := [5]float64{3.5, 4.1, 4.5, 3.9, 4.23} // 배열 초기화 시 중괄호 사용 atty := attay literal
-	gpa_slice := gpas[1:4]                       // [4.1, 4.5, 3.9]
-	// gpa_slice[1] = 2.71
-	gpas[2] = 2.71
-	// gpa_slice = append(gpa_slice, 4.3)
-	gpa_slice = append(gpa_slice, 4.3, 5.55) // 뒤 3.로 시작하는건 5개가 최대라 늘어나지 않는다 그럴때는 다른공간을 할당 받는다
-	fmt.Println(len(gpa_slice), gpa_slice, gpas)
+	//fmt.Print(os.Args, len(os.Args), reflect.TypeOf(os.Args))
+	slices := os.Args[1:]
+	fmt.Println(slices, slices[1])
+	test(1, "123")
+	test(-99, "123", "abc")
+	test(55)
+	test(0, "123", "abc", "123a")
 }
