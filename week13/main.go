@@ -11,6 +11,6 @@ func main() {
 	// gpa_slice[1] = 2.71
 	gpas[2] = 2.71
 	// gpa_slice = append(gpa_slice, 4.3)
-	gpa_slice = append(gpa_slice, 4.3, 5.55)
+	gpa_slice = append(gpa_slice, 4.3, 5.55) // 뒤 3.로 시작하는건 5개가 최대라 늘어나지 않는다 그럴때는 다른공간을 할당 받는다
 	fmt.Println(len(gpa_slice), gpa_slice, gpas)
 }
